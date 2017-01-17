@@ -32,12 +32,14 @@
             this.screen = new System.Windows.Forms.Panel();
             this.player = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.screen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
             // screen
             // 
+            this.screen.Controls.Add(this.label1);
             this.screen.Controls.Add(this.player);
             this.screen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.screen.Location = new System.Drawing.Point(0, 0);
@@ -60,6 +62,16 @@
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(90, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 96);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Commands : \r\n[< -] Left             \r\n[- >] Right \r\n[space] Jump";
+            // 
             // MarioDojo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -71,6 +83,7 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MarioDojo_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MarioDojo_KeyUp);
             this.screen.ResumeLayout(false);
+            this.screen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
 
@@ -81,6 +94,7 @@
         private System.Windows.Forms.Panel screen;
         private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
