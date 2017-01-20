@@ -30,15 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.screen = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.player = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.Block1 = new System.Windows.Forms.PictureBox();
             this.screen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Block1)).BeginInit();
             this.SuspendLayout();
             // 
             // screen
             // 
+            this.screen.Controls.Add(this.Block1);
             this.screen.Controls.Add(this.label1);
             this.screen.Controls.Add(this.player);
             this.screen.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -46,21 +49,6 @@
             this.screen.Name = "screen";
             this.screen.Size = new System.Drawing.Size(1465, 806);
             this.screen.TabIndex = 0;
-            // 
-            // player
-            // 
-            this.player.BackColor = System.Drawing.Color.Black;
-            this.player.Location = new System.Drawing.Point(663, 62);
-            this.player.Name = "player";
-            this.player.Size = new System.Drawing.Size(25, 25);
-            this.player.TabIndex = 0;
-            this.player.TabStop = false;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label1
             // 
@@ -71,6 +59,32 @@
             this.label1.Size = new System.Drawing.Size(157, 96);
             this.label1.TabIndex = 1;
             this.label1.Text = "Commands : \r\n[< -] Left             \r\n[- >] Right \r\n[space] Jump";
+            // 
+            // player
+            // 
+            this.player.BackColor = System.Drawing.Color.Black;
+            this.player.InitialImage = null;
+            this.player.Location = new System.Drawing.Point(294, 508);
+            this.player.Name = "player";
+            this.player.Size = new System.Drawing.Size(50, 50);
+            this.player.TabIndex = 0;
+            this.player.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // Block1
+            // 
+            this.Block1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.Block1.Location = new System.Drawing.Point(571, 673);
+            this.Block1.Name = "Block1";
+            this.Block1.Size = new System.Drawing.Size(286, 130);
+            this.Block1.TabIndex = 2;
+            this.Block1.TabStop = false;
+            this.Block1.Click += new System.EventHandler(this.Block1_Click);
             // 
             // MarioDojo
             // 
@@ -85,6 +99,7 @@
             this.screen.ResumeLayout(false);
             this.screen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Block1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -95,6 +110,7 @@
         private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox Block1;
     }
 }
 
