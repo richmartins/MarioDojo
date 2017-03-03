@@ -27,16 +27,17 @@ namespace MarioDojo
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (! clearX(player, Block1))
+            var collisionStatus = CollisionStatus.contact(player, Block1);
+            if (!collisionStatus.canIncX)
             {
-                right = false;
-                player.BackColor = System.Drawing.Color.Red;
-
-            }
-            else {
-                player.BackColor = System.Drawing.Color.Pink;
+                right = false;    
             }
 
+            if (!collisionStatus.canDecX)
+            {
+                left = false;
+            }
+            
             if (right == true) { player.Left += 5; }
             if (left == true) { player.Left -= 5; }
 
@@ -103,5 +104,10 @@ namespace MarioDojo
             return fullyTop || fullyBottom;
         }
 
+        private void player_Click(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }
